@@ -1,13 +1,224 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif; /* Sử dụng font Arial hoặc một font sans-serif khác thay cho Roboto */
+  font-size: 12px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.trigger {
+  padding: 0 16px; /* Giảm khoảng cách ngoại vi padding để làm cho giao diện nhỏ gọn hơn */
+  font-size: 20px; /* Giảm kích thước font cho các trigger */
+  line-height: 48px; /* Giảm line-height cho các trigger để làm cho chúng trông gọn gàng hơn */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #ff1818;
+}
+
+.logo {
+  background-color: rgb(201, 22, 19);
+  text-align: center; /* Căn giữa nội dung trong div */
+  border-radius: 10px; /* Bo góc cho div */
+}
+
+.logo h2 {
+  font-family: Arial, sans-serif; /* Sử dụng font Arial hoặc font sans-serif khác */
+  font-size: 12px; /* Kích thước font chữ cho tiêu đề */
+  margin: 0; /* Loại bỏ margin mặc định của tiêu đề */
+  padding: 0; /* Loại bỏ padding mặc định của tiêu đề */
+  margin-bottom: 15px;
+}
+
+.logo .sm-logo {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.logo .lg-logo {
+  font-size: 18px; /* Kích thước font chữ cho tiêu đề lớn (Homemap.asia) */
+  font-weight: bold; /* Đậm hóa tiêu đề lớn */
+  transition: 0, 3s;
+}
+
+.text-white {
+  color: white; /* Màu chữ trắng */
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-sider {
+  flex: 0 0 200px !important;
+  max-width: 200px !important;
+  min-width: 200px !important;
+  width: 200px !important;
+}
+
+.ant-layout-sider-collapsed {
+  flex: 0 0 80px !important;
+  max-width: 80px !important;
+  min-width: 80px !important;
+  width: 80px !important;
+}
+
+.sm-logo {
+  display: none;
+  transition: 0, 3s;
+}
+
+.ant-layout-sider-collapsed .sm-logo {
+  display: block;
+}
+
+.ant-layout-sider-collapsed .lg-logo {
+  display: none;
+}
+
+main {
+  height: 85vh; /* Đặt chiều cao cho phần main */
+  padding: 20px;
+  overflow-y: scroll; /* Cho phép cuộn nội dung khi nó vượt quá kích thước của main */
+  background-color: transparent !important; /* Thiết lập màu nền trong suốt cho phần main */
+  color: #333; /* Màu chữ cho nội dung trong phần main */
+}
+
+main::-webkit-scrollbar {
+  width: 0px;
+}
+
+.ant-menu-title-content {
+  font-size: 12px; /* Giảm kích thước font cho tiêu đề menu */
+}
+
+.ant-layout-header h5 {
+  line-height: 20px;
+  font-size: 12px; /* Giảm kích thước font cho các tiêu đề header */
+}
+
+.ant-layout-header p {
+  line-height: 20px;
+  font-size: 12px; /* Giảm kích thước font cho nội dung header */
+}
+
+.ant-layout-header div .badge {
+  top: 16px;
+  right: -6px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+/* Đảm bảo rằng bạn đã kết nối CSS này với tệp HTML của bạn */
+
+.position-relative {
+  display: inline-block; /* Cho phép phần tử hiển thị inline và vị trí tương đối */
+  position: relative;
+}
+
+.fs-3 {
+  font-size: 24px; /* Kích thước của biểu tượng */
+  color: #ff1818; /* Màu sắc cho biểu tượng (có thể thay đổi tùy ý) */
+  margin-right: 5px; /* Khoảng cách giữa biểu tượng và badge */
+}
+
+.badge {
+  background-color: rgb(254, 247, 247);
+  color: #333; /* Màu chữ cho badge */
+  font-size: 15px; /* Kích thước font chữ cho badge */
+  border-radius: 80%; /* Bo góc để tạo hình dạng hình tròn */
+  padding: 5px 8px; /* Kích thước và khoảng cách nội dung trong badge */
+  position: absolute; /* Đặt vị trí tuyệt đối để đặt badge */
+  top: -10px; /* Đặt badge lên trên biểu tượng */
+  right: -10px; /* Đặt badge bên phải biểu tượng */
+}
+
+/* Đảm bảo rằng bạn đã kết nối CSS này với tệp HTML của bạn */
+
+.dropdown-menu {
+  position: absolute; /* Đảm bảo hiển thị mục menu tuyệt đối trong vùng chứa cha */
+  background-color: #fff; /* Màu nền cho menu dropdown */
+  border: 1px solid #e0e0e0; /* Viền xung quanh menu dropdown */
+  border-radius: 4px; /* Bo góc cho menu dropdown */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiển thị bóng cho menu dropdown */
+  z-index: 1; /* Đặt độ ưu tiên z-index để nó nằm phía trên các phần tử khác */
+}
+
+.dropdown-menu li {
+  list-style: none; /* Loại bỏ dấu chấm trước mục */
+  margin: 0; /* Loại bỏ margin mặc định của mục */
+  padding: 0; /* Loại bỏ padding mặc định của mục */
+}
+
+.dropdown-item {
+  font-size: 14px; /* Kích thước font chữ cho mục menu */
+  color: #333; /* Màu chữ cho mục menu */
+  padding: 8px 16px; /* Kích thước và khoảng cách nội dung trong mục menu */
+  text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
+  display: block; /* Biến mục menu thành khối để đảm bảo kích thước và padding hoạt động đúng cách */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Màu nền mục menu khi hover */
+}
+
+/* Đảm bảo rằng bạn đã kết nối CSS này với tệp HTML của bạn */
+
+/* Định dạng chung cho phần dashboard */
+.dashboard {
+  font-family: "Roboto", sans-serif; /* Font chữ chung */
+  color: #333; /* Màu chữ chung */
+  padding: 20px; /* Khoảng cách nội dung chung */
+}
+
+/* Tiêu đề */
+.title {
+  font-size: 24px; /* Kích thước font chữ tiêu đề */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Mô tả */
+.desc {
+  font-size: 14px; /* Kích thước font chữ cho mô tả */
+  color: #888; /* Màu chữ cho mô tả */
+}
+
+/* Phần tổng doanh thu */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Khoảng cách giữa các phần tử con */
+}
+
+.bg-white {
+  background-color: #fff; /* Màu nền cho phần tổng doanh thu */
+  border-radius: 8px; /* Bo góc cho phần tổng doanh thu */
+  padding: 20px; /* Khoảng cách nội dung bên trong phần tổng doanh thu */
+  flex-grow: 1; /* Phần tổng doanh thu mở rộng để lấp đầy không gian cha */
+}
+
+.sub-title {
+  font-size: 20px; /* Kích thước font chữ cho tiêu đề phụ */
+  margin-bottom: 5px; /* Khoảng cách dưới tiêu đề phụ */
+}
+
+.red {
+  color: red; /* Màu chữ đỏ */
+}
+
+.green {
+  color: green; /* Màu chữ xanh lá cây */
+}
+
+/* Phần thống kê doanh thu */
+.chart {
+  margin-top: 20px; /* Khoảng cách trên biểu đồ */
+}
+
+/* Phần lịch sử đơn hàng */
+.table {
+  margin-top: 20px; /* Khoảng cách trên bảng */
 }
